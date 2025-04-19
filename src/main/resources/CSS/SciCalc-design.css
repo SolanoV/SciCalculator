@@ -9,11 +9,42 @@
 
 .shiftButton{
     -fx-background-color: yellow;
-    -fx-background-radius: 100px;
+    -fx-background-radius: 10px;
 }
 
-.normalButton{
-    -fx-background-color: #3e3e3e;
-    -fx-background-radius: 100px;
+.shiftButton:hover{
+    -fx-background-color: #ffe86c;
+}
+
+.shiftText{
+    -fx-text-fill: yellow;
+}
+.normalText{
     -fx-text-fill: white;
+}
+
+.group1Button{
+    -fx-background-color: #3e3e3e;
+    -fx-background-radius: 10px;
+    -fx-text-fill: white;
+}
+.group1Button:hover{
+    -fx-background-color: #515151;
+}
+
+
+
+.group2Button{
+    -fx-background-color: #212121;
+    -fx-background-radius: 10px;
+    -fx-text-fill: white;
+}
+.group2Button:hover{
+    -fx-background-color: #404040;
+}
+
+.textFieldcalc{
+    -fx-background-color: black;
+    -fx-text-fill: white;
+    -fx-caret-color: white;
 }

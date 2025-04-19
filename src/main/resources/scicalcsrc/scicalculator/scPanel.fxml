@@ -2,6 +2,10 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -17,6 +21,18 @@
                <VBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </VBox.margin>
+               <children>
+                  <Label fx:id="resultLabel" alignment="CENTER_RIGHT" layoutX="-2.0" layoutY="113.0" prefHeight="43.0" prefWidth="379.0" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="100.0">
+                     <font>
+                        <Font name="Calibri" size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="insertTextField" layoutX="2.0" layoutY="14.0" prefHeight="58.0" prefWidth="374.0" styleClass="textFieldcalc" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <font>
+                        <Font name="Cambria Math" size="20.0" />
+                     </font>
+                  </TextField>
+               </children>
             </AnchorPane>
             <GridPane alignment="CENTER" prefHeight="158.0" prefWidth="379.0">
               <columnConstraints>
@@ -32,21 +48,175 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button fx:id="downButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="70.0" styleClass="normalButton" text="down" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-                  <Button fx:id="probabilityButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="60.0" styleClass="normalButton" text="Probability" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-                  <Button fx:id="functionButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="60.0" styleClass="normalButton" text="Function" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-                  <Button fx:id="numericalButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="60.0" styleClass="normalButton" text="Numeric" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-                  <Button fx:id="conversionButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="60.0" styleClass="normalButton" text="Conversion" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-                  <Button fx:id="okButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="70.0" styleClass="normalButton" text="ok" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <Button fx:id="downButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="66.0" styleClass="group1Button" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../Images/downButton.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+                  <Button fx:id="okButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="70.0" styleClass="group1Button" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets />
-                     </GridPane.margin></Button>
-                  <Button fx:id="upButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="70.0" styleClass="normalButton" text="up" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-                  <Button fx:id="leftButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="70.0" styleClass="normalButton" text="left" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-                  <Button fx:id="rightButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="70.0" styleClass="normalButton" text="right" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-                  <Button fx:id="shiftButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="60.0" styleClass="shiftButton" text="Shift" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-                  <Button fx:id="formatButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="60.0" styleClass="normalButton" text="format" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-                  <Button fx:id="backButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="60.0" styleClass="normalButton" text="Back" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                     </GridPane.margin>
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../Images/okButton.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+                  <Button fx:id="upButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="70.0" styleClass="group1Button" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../Images/upButton.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+                  <Button fx:id="leftButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="70.0" styleClass="group1Button" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../Images/leftButton.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+                  <Button fx:id="rightButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="70.0" styleClass="group1Button" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../Images/rightButton.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <children>
+                        <Button fx:id="shiftButton" mnemonicParsing="false" prefHeight="38.0" prefWidth="22.0" styleClass="shiftButton">
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Images/shiftButton.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Label styleClass="shiftText" text="Shift">
+                           <font>
+                              <Font size="8.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <children>
+                        <Button fx:id="formatButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="43.0" styleClass="group1Button">
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Images/formatButton.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Label styleClass="normalText" text="Format">
+                           <font>
+                              <Font size="8.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <children>
+                        <Button fx:id="backButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="7.0" styleClass="group1Button">
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Images/backButton.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Label styleClass="normalText" text="Back">
+                           <font>
+                              <Font size="8.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                     <children>
+                        <Button fx:id="functionButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="60.0" styleClass="group1Button">
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Images/functionButton.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Label styleClass="normalText" text="Function">
+                           <font>
+                              <Font size="8.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                     <children>
+                        <Button fx:id="probabilityButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="60.0" styleClass="group1Button">
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Images/probabilityButton.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Label styleClass="normalText" text="Distribution">
+                           <font>
+                              <Font size="8.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                     <children>
+                        <Button fx:id="numericalButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="60.0" styleClass="group1Button">
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Images/numericButton.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Label styleClass="normalText" text="Numeric">
+                           <font>
+                              <Font size="8.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                     <children>
+                        <Button fx:id="conversionButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="60.0" styleClass="group1Button">
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Images/convertButton.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Label styleClass="normalText" text="Convert">
+                           <font>
+                              <Font size="8.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
                </children>
                <VBox.margin>
                   <Insets left="10.0" right="10.0" />
@@ -66,18 +236,181 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button fx:id="answerButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="normalButton" text="Ans" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-                  <Button fx:id="sinButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="normalButton" text="sin" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-                  <Button fx:id="cosButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="normalButton" text="cos" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-                  <Button fx:id="tanButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="normalButton" text="tan" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-                  <Button fx:id="leftParenthesisButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="normalButton" text="(" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-                  <Button fx:id="rightParenthesisButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="normalButton" text=")" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-                  <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="normalButton" text="x" GridPane.halignment="CENTER" GridPane.valignment="CENTER" fx:id="xButton" />
-                  <Button fx:id="fractiobutton" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="normalButton" text="fraction" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-                  <Button fx:id="sqrtButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="normalButton" text="sqrt" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-                  <Button fx:id="exponentButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="normalButton" text="exponent" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-                  <Button fx:id="squaredButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="normalButton" text="quadratic" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-                  <Button fx:id="logNButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="normalButton" text="log" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                  <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <children>
+                        <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="50.0" styleClass="group2Button" fx:id="xButton">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Images/xButton.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <children>
+                        <Label styleClass="shiftText" text="mixed">
+                           <font>
+                              <Font size="8.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="fractionButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="50.0" styleClass="group2Button">
+                           <graphic>
+                              <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Images/fractionButton.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <children>
+                        <Label styleClass="shiftText" text="cstm root">
+                           <font>
+                              <Font size="8.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="sqrtButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="50.0" styleClass="group2Button">
+                           <graphic>
+                              <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Images/sqrtButton.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <children>
+                        <Label styleClass="shiftText" text="inverse">
+                           <font>
+                              <Font size="8.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="exponentButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="50.0" styleClass="group2Button">
+                           <graphic>
+                              <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Images/exponentButton.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <children>
+                        <Label styleClass="shiftText" text="log10">
+                           <font>
+                              <Font size="8.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="squaredButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="50.0" styleClass="group2Button">
+                           <graphic>
+                              <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Images/squaredButton.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <children>
+                        <Label styleClass="shiftText" text="ln">
+                           <font>
+                              <Font size="8.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="logNButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="50.0" styleClass="group2Button">
+                           <graphic>
+                              <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Images/logNButton.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <children>
+                        <Button fx:id="answerButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="50.0" styleClass="group2Button" text="Ans">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <children>
+                        <Label styleClass="shiftText" text="arcsin">
+                           <font>
+                              <Font size="8.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="sinButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="50.0" styleClass="group2Button" text="sin">
+                           <font>
+                              <Font name="Calibri Bold" size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <children>
+                        <Label styleClass="shiftText" text="arccos">
+                           <font>
+                              <Font size="8.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="cosButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="50.0" styleClass="group2Button" text="cos">
+                           <font>
+                              <Font name="Calibri Bold" size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <children>
+                        <Label styleClass="shiftText" text="arctan">
+                           <font>
+                              <Font size="8.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="tanButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="50.0" styleClass="group2Button" text="tan">
+                           <font>
+                              <Font name="Calibri Bold" size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <children>
+                        <Button fx:id="leftParenthesisButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="50.0" styleClass="group2Button" text="(">
+                           <font>
+                              <Font name="Calibri Bold" size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <children>
+                        <Button fx:id="rightParenthesisButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="50.0" styleClass="group2Button" text=")">
+                           <font>
+                              <Font name="Calibri Bold" size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
                </children>
                <VBox.margin>
                   <Insets left="10.0" right="10.0" />
@@ -98,109 +431,260 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button fx:id="sevenButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="70.0" styleClass="normalButton" text="7" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                     <GridPane.margin>
-                        <Insets />
-                     </GridPane.margin>
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="eightButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="70.0" styleClass="normalButton" text="8" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="nineButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="70.0" styleClass="normalButton" text="9" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="backspaceButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="70.0" styleClass="normalButton" text="&lt;&lt;" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                     <font>
-                        <Font size="17.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="clearButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="70.0" styleClass="normalButton" text="AC" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="fourButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="70.0" styleClass="normalButton" text="4" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="fiveButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="70.0" styleClass="normalButton" text="5" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="sixButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="70.0" styleClass="normalButton" text="6" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="multiplyButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="70.0" styleClass="normalButton" text="*" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="divideButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="70.0" styleClass="normalButton" text="/" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="oneButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="70.0" styleClass="normalButton" text="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="twoButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="70.0" styleClass="normalButton" text="2" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="threeButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="70.0" styleClass="normalButton" text="3" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="additionButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="70.0" styleClass="normalButton" text="+" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="subtractButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="70.0" styleClass="normalButton" text="-" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="zeroButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="70.0" styleClass="normalButton" text="0" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="decimalPointButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="70.0" styleClass="normalButton" text="." GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="commaButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="70.0" styleClass="normalButton" text="," GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="moduloButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="70.0" styleClass="normalButton" text="\%" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="equalButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="70.0" styleClass="normalButton" text="=" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Button>
+                  <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="76.0" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <children>
+                        <Label styleClass="shiftText" text="π">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="sevenButton" mnemonicParsing="false" onAction="#sevenButtonAction" prefHeight="43.0" prefWidth="70.0" styleClass="group2Button" text="7" focusTraversable="false">
+                           <font>
+                              <Font name="Calibri Bold" size="20.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <children>
+                        <Label styleClass="shiftText" text="e">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="eightButton" mnemonicParsing="false" onAction="#eightButtonAction" prefHeight="40.0" prefWidth="70.0" styleClass="group2Button" text="8" focusTraversable="false">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <children>
+                        <Label styleClass="shiftText" text="i">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="nineButton" mnemonicParsing="false" onAction="#nineButtonAction" prefHeight="40.0" prefWidth="70.0" styleClass="group2Button" text="9" focusTraversable="false">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <children>
+                        <Button fx:id="backspaceButton" alignment="CENTER" mnemonicParsing="false" prefHeight="40.0" prefWidth="70.0" styleClass="group2Button">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Images/backspaceButton.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <children>
+                        <Button fx:id="clearButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="70.0" styleClass="group2Button" text="AC">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <children>
+                        <Label styleClass="shiftText" text="A">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="fourButton" mnemonicParsing="false" onAction="#fourButtonAction" prefHeight="40.0" prefWidth="70.0" styleClass="group2Button" text="4" focusTraversable="false">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <children>
+                        <Label styleClass="shiftText" text="B">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="fiveButton" mnemonicParsing="false" onAction="#fiveButtonAction" prefHeight="40.0" prefWidth="70.0" styleClass="group2Button" text="5" focusTraversable="false">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <children>
+                        <Label styleClass="shiftText" text="C">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="sixButton" mnemonicParsing="false" onAction="#sixButtonAction" prefHeight="40.0" prefWidth="70.0" styleClass="group2Button" text="6" focusTraversable="false">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <children>
+                        <Button fx:id="multiplyButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="70.0" styleClass="group2Button" text="X">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <children>
+                        <Button fx:id="divideButton" alignment="CENTER" mnemonicParsing="false" prefHeight="40.0" prefWidth="70.0" styleClass="group2Button">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Images/divideButton.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                     <children>
+                        <Label styleClass="shiftText" text="D">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="oneButton" mnemonicParsing="false" onAction="#oneButtonAction" prefHeight="40.0" prefWidth="70.0" styleClass="group2Button" text="1" focusTraversable="false">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                     <children>
+                        <Label styleClass="shiftText" text="E">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="twoButton" mnemonicParsing="false" onAction="#twoButtonAction" prefHeight="40.0" prefWidth="70.0" styleClass="group2Button" text="2" focusTraversable="false">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                     <children>
+                        <Label styleClass="shiftText" text="F">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="threeButton" mnemonicParsing="false" onAction="#threeButtonAction" prefHeight="40.0" prefWidth="70.0" styleClass="group2Button" text="3" focusTraversable="false">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                     <children>
+                        <Button fx:id="additionButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="70.0" styleClass="group2Button" text="+">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                     <children>
+                        <Button fx:id="subtractButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="70.0" styleClass="group2Button" text="-">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                     <children>
+                        <Label styleClass="shiftText" text="x">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="zeroButton" mnemonicParsing="false" onAction="#zeroButtonAction" prefHeight="40.0" prefWidth="70.0" styleClass="group2Button" text="0" focusTraversable="false">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                     <children>
+                        <Label styleClass="shiftText" text="y">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="decimalPointButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="70.0" styleClass="group2Button" text=".">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                     <children>
+                        <Label styleClass="shiftText" text="z">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="commaButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="70.0" styleClass="group2Button" text=",">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                     <children>
+                        <Button fx:id="moduloButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="70.0" styleClass="group2Button" text="\%">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                     <children>
+                        <Button fx:id="equalButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="70.0" styleClass="group2Button" text="EXE">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
                </children>
                <VBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" />

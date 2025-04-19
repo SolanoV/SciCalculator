@@ -10,6 +10,7 @@ module scicalcsrc.scicalculator {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
+    requires java.desktop;
 
     opens scicalcsrc.scicalculator to javafx.fxml;
     exports scicalcsrc.scicalculator;
