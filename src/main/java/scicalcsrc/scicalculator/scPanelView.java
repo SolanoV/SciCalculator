@@ -10,8 +10,8 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class scPanelView extends Application {
-    public static void main(String[] args) {
-        launch(args);
+    public static void run() {
+        launch();
     }
 
     @Override //this runs the fxml file "scPanel" which has the layout and design of the view
