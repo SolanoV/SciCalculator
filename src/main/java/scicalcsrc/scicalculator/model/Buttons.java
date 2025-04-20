@@ -1,10 +1,10 @@
 package scicalcsrc.scicalculator.model;
 
-abstract class Buttons {
+abstract class Buttons {//abstract class for the Buttons
     private String buttonValue;
     private int buttonValueLength;
 
-    Buttons(){
+    Buttons(){//default constructor
         this.buttonValue="";
         this.buttonValueLength=0;
     }
@@ -16,6 +16,6 @@ abstract class Buttons {
         return buttonValue;
     }
 
-    abstract int getbuttonLength(String buttonValue);
+    abstract int getbuttonLength(String buttonValue);//abstract method
 
-}
+}//SOLANO, IGNACIO

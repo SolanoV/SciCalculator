@@ -19,7 +19,7 @@ public class valueButtons {
     private characterButtons Baddition;
     private characterButtons Bsubtraction;
     private characterButtons Bmodulo;
-    private characterButtons Bx;
+    private characterButtons Babs;
     private characterButtons Bfrct;
     private characterButtons Bsqrt;
     private characterButtons Bexp;
@@ -31,8 +31,12 @@ public class valueButtons {
     private characterButtons Btan;
     private characterButtons BleftPar;
     private characterButtons BrightPar;
+    private characterButtons BcustomRoot;
+    private characterButtons Binverse;
+    private characterButtons Blog10;
+    private characterButtons Bln;
 
-    public valueButtons() {
+    public valueButtons() {//declares objects of buttons and instantiates their values and shifted values
         this.B1=new characterButtons("1","D");
         this.B2=new characterButtons("2","E");
         this.B3=new characterButtons("3","F");
@@ -45,24 +49,31 @@ public class valueButtons {
         this.B0=new characterButtons("0","x");
         this.Bdot=new characterButtons(".","y");
         this.Bcomma=new characterButtons(",","z");
-        this.Bmultiply=new characterButtons("*");
-        this.Bdivide=new characterButtons("/");
-        this.Baddition=new characterButtons("+");
-        this.Bsubtraction=new characterButtons("-");
-        this.Bmodulo=new characterButtons("%");
-        this.Bx=new characterButtons("x");
-        this.Bfrct=new characterButtons("frct()","mfrct()");
-        this.Bsqrt=new characterButtons("sqrt()","sqrtn()");
-        this.Bexp=new characterButtons("exp()","inv()");
-        this.Bsqrd=new characterButtons("sqrd()","log(10)");
-        this.BlogN=new characterButtons("log()","ln()");
-        this.BAns=new characterButtons("Ans");
-        this.Bsin=new characterButtons("sin()","arcsin()");
-        this.Bcos=new characterButtons("cos()","arccos()");
-        this.Btan=new characterButtons("tan()","arctan()");
-        this.BleftPar=new characterButtons("(");
-        this.BrightPar=new characterButtons(")");
+        this.Bmultiply=new characterButtons("*","*");
+        this.Bdivide=new characterButtons("/","/");
+        this.Baddition=new characterButtons("+","+");
+        this.Bsubtraction=new characterButtons("-","-");
+        this.Bmodulo=new characterButtons("%","%");
+        this.Babs=new characterButtons("||","||");
+        this.Bfrct=new characterButtons("(/)","arcsin()");
+        this.Bsqrt=new characterButtons("√()","arccos()");
+        this.Bexp=new characterButtons("^()","arctan()");
+        this.Bsqrd=new characterButtons("^(2)","^(2)");
+        this.BlogN=new characterButtons("log(,)","log(,)");
+        this.BAns=new characterButtons("Ans","Ans");
+        this.Bsin=new characterButtons("sin()","csc()");
+        this.Bcos=new characterButtons("cos()","sec()");
+        this.Btan=new characterButtons("tan()","cot()");
+        this.BleftPar=new characterButtons("(","(");
+        this.BrightPar=new characterButtons(")",")");
+        this.BcustomRoot=new characterButtons("√(,)","√(,)");
+        this.Binverse=new characterButtons("^(-1)","^(-1)");
+        this.Blog10=new characterButtons("log(10,)","log(10,)");
+        this.Bln=new characterButtons("ln()","()");
+
+
     }
+    //gets the String value of the buttons
     public String getoneButton(){return B1.getButtonValueString();}
     public String gettwoButton(){return B2.getButtonValueString();}
     public String getthreeButton(){return B3.getButtonValueString();}
@@ -80,7 +91,7 @@ public class valueButtons {
     public String getadditionButton(){return Baddition.getButtonValueString();}
     public String getsubtractionButton(){return Bsubtraction.getButtonValueString();}
     public String getmoduloButton(){return Bmodulo.getButtonValueString();}
-    public String getxButton(){return Bx.getButtonValueString();}
+    public String getAbsButton(){return Babs.getButtonValueString();}
     public String getfrctButton(){return Bfrct.getButtonValueString();}
     public String getsqrtButton(){return Bsqrt.getButtonValueString();}
     public String getexpButton(){return Bexp.getButtonValueString();}
@@ -92,5 +103,9 @@ public class valueButtons {
     public String gettanButton(){return Btan.getButtonValueString();}
     public String getleftParButton(){return BleftPar.getButtonValueString();}
     public String getrightParButton(){return BrightPar.getButtonValueString();}
+    public String getcustomRootButton(){return BcustomRoot.getButtonValueString();}
+    public String getinverseButton(){return Binverse.getButtonValueString();}
+    public String getlog10Button(){return Blog10.getButtonValueString();}
+    public String getlnButton(){return Bln.getButtonValueString();}
 
-}
+}//SOLANO

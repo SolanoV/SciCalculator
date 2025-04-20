@@ -22,9 +22,9 @@
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </VBox.margin>
                <children>
-                  <Label fx:id="resultLabel" alignment="CENTER_RIGHT" layoutX="-2.0" layoutY="113.0" prefHeight="43.0" prefWidth="379.0" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="100.0">
+                  <Label fx:id="resultLabel" alignment="CENTER_RIGHT" layoutX="1.6" layoutY="101.6" prefHeight="61.0" prefWidth="359.0" textFill="WHITE" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="101.0">
                      <font>
-                        <Font name="Calibri" size="20.0" />
+                        <Font name="Cambria Math" size="20.0" />
                      </font>
                   </Label>
                   <TextField fx:id="insertTextField" layoutX="2.0" layoutY="14.0" prefHeight="58.0" prefWidth="374.0" styleClass="textFieldcalc" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -33,6 +33,11 @@
                      </font>
                   </TextField>
                   <Label fx:id="shiftLabel" layoutX="14.0" layoutY="142.0" prefHeight="15.0" prefWidth="50.0" styleClass="shiftText">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="formatLabel" alignment="CENTER_RIGHT" layoutX="307.0" layoutY="142.0" prefHeight="15.0" prefWidth="50.0" styleClass="shiftText" text="Degree">
                      <font>
                         <Font size="10.0" />
                      </font>
@@ -53,7 +58,7 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button fx:id="downButton" focusTraversable="false" mnemonicParsing="false" prefHeight="40.0" prefWidth="66.0" styleClass="group1Button" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <Button fx:id="downButton" focusTraversable="false" mnemonicParsing="false" onAction="#downButtonAction" prefHeight="40.0" prefWidth="66.0" styleClass="group1Button" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                      <graphic>
                         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -61,18 +66,7 @@
                            </image>
                         </ImageView>
                      </graphic></Button>
-                  <Button fx:id="okButton" focusTraversable="false" mnemonicParsing="false" prefHeight="40.0" prefWidth="70.0" styleClass="group1Button" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-                     <GridPane.margin>
-                        <Insets />
-                     </GridPane.margin>
-                     <graphic>
-                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../Images/okButton.png" />
-                           </image>
-                        </ImageView>
-                     </graphic></Button>
-                  <Button fx:id="upButton" focusTraversable="false" mnemonicParsing="false" prefHeight="40.0" prefWidth="70.0" styleClass="group1Button" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <Button fx:id="upButton" focusTraversable="false" mnemonicParsing="false" onAction="#upButtonAction" prefHeight="40.0" prefWidth="70.0" styleClass="group1Button" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <graphic>
                         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -116,7 +110,7 @@
                   </VBox>
                   <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                      <children>
-                        <Button fx:id="formatButton" focusTraversable="false" mnemonicParsing="false" prefHeight="40.0" prefWidth="43.0" styleClass="group1Button">
+                        <Button fx:id="formatButton" focusTraversable="false" mnemonicParsing="false" onAction="#formatButtonAction" prefHeight="40.0" prefWidth="43.0" styleClass="group1Button">
                            <graphic>
                               <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -130,20 +124,19 @@
                               <Font size="8.0" />
                            </font>
                         </Label>
-                     </children>
-                  </VBox>
+                     </children></VBox>
                   <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <children>
-                        <Button fx:id="backButton" focusTraversable="false" mnemonicParsing="false" prefHeight="40.0" prefWidth="7.0" styleClass="group1Button">
+                        <Button fx:id="exitButton" focusTraversable="false" mnemonicParsing="false" onAction="#exitButtonAction" prefHeight="40.0" prefWidth="47.0" styleClass="redButton">
                            <graphic>
                               <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../Images/backButton.png" />
+                                    <Image url="@../../Images/redXButton.png" />
                                  </image>
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Label styleClass="normalText" text="Back">
+                        <Label text="EXIT" textFill="#ff4a4a">
                            <font>
                               <Font size="8.0" />
                            </font>
@@ -152,76 +145,61 @@
                   </VBox>
                   <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                      <children>
-                        <Button fx:id="functionButton" focusTraversable="false" mnemonicParsing="false" prefHeight="40.0" prefWidth="60.0" styleClass="group1Button">
+                        <Button fx:id="customRootButton" focusTraversable="false" mnemonicParsing="false" onAction="#customRootButtonAction" prefHeight="40.0" prefWidth="60.0" styleClass="group2Button">
                            <graphic>
-                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="31.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../Images/functionButton.png" />
+                                    <Image url="@../../Images/customRootButton.png" />
                                  </image>
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Label styleClass="normalText" text="Function">
-                           <font>
-                              <Font size="8.0" />
-                           </font>
-                        </Label>
                      </children>
                   </VBox>
                   <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                      <children>
-                        <Button fx:id="probabilityButton" focusTraversable="false" mnemonicParsing="false" prefHeight="40.0" prefWidth="60.0" styleClass="group1Button">
+                        <Button fx:id="inverseButton" focusTraversable="false" mnemonicParsing="false" onAction="#inverseButtonAction" prefHeight="40.0" prefWidth="60.0" styleClass="group2Button">
                            <graphic>
-                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="30.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../Images/probabilityButton.png" />
+                                    <Image url="@../../Images/inverseButton.png" />
                                  </image>
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Label styleClass="normalText" text="Distribution">
-                           <font>
-                              <Font size="8.0" />
-                           </font>
-                        </Label>
                      </children>
                   </VBox>
-                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                      <children>
-                        <Button fx:id="numericalButton" focusTraversable="false" mnemonicParsing="false" prefHeight="40.0" prefWidth="60.0" styleClass="group1Button">
+                        <Button fx:id="log10Button" focusTraversable="false" mnemonicParsing="false" onAction="#log10ButtonAction" prefHeight="40.0" prefWidth="60.0" styleClass="group2Button">
                            <graphic>
                               <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../Images/numericButton.png" />
+                                    <Image url="@../../Images/log10button.png" />
                                  </image>
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Label styleClass="normalText" text="Numeric">
-                           <font>
-                              <Font size="8.0" />
-                           </font>
-                        </Label>
                      </children>
                   </VBox>
-                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                      <children>
-                        <Button fx:id="conversionButton" focusTraversable="false" mnemonicParsing="false" prefHeight="40.0" prefWidth="60.0" styleClass="group1Button">
+                        <Button fx:id="conversionButton" focusTraversable="false" mnemonicParsing="false" onAction="#naturalLogButtonAction" prefHeight="40.0" prefWidth="60.0" styleClass="group2Button">
                            <graphic>
-                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fx:id="naturalLogButton" fitHeight="31.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../Images/convertButton.png" />
+                                    <Image url="@../../Images/naturalLogButton.png" />
                                  </image>
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Label styleClass="normalText" text="Convert">
-                           <font>
-                              <Font size="8.0" />
-                           </font>
-                        </Label>
                      </children>
                   </VBox>
+                  <Button fx:id="okButton1" focusTraversable="false" mnemonicParsing="false" prefHeight="40.0" prefWidth="70.0" styleClass="group1Button" text="_" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Button>
                </children>
                <VBox.margin>
                   <Insets left="10.0" right="10.0" />
@@ -243,14 +221,14 @@
                <children>
                   <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <children>
-                        <Button focusTraversable="false" mnemonicParsing="false" onAction="#xButtonAction" prefHeight="40.0" prefWidth="50.0" styleClass="group2Button" fx:id="xButton">
+                        <Button fx:id="absoluteValueButton" focusTraversable="false" mnemonicParsing="false" onAction="#absoluteValueButtonAction" prefHeight="40.0" prefWidth="50.0" styleClass="group2Button">
                            <font>
                               <Font size="16.0" />
                            </font>
                            <graphic>
                               <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../Images/xButton.png" />
+                                    <Image url="@../../Images/absoluteValueButton.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -259,7 +237,7 @@
                   </VBox>
                   <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <children>
-                        <Label styleClass="shiftText" text="mixed">
+                        <Label styleClass="shiftText" text="arcsin">
                            <font>
                               <Font size="8.0" />
                            </font>
@@ -277,7 +255,7 @@
                   </VBox>
                   <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <children>
-                        <Label styleClass="shiftText" text="cstm root">
+                        <Label styleClass="shiftText" text="arccos">
                            <font>
                               <Font size="8.0" />
                            </font>
@@ -295,7 +273,7 @@
                   </VBox>
                   <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <children>
-                        <Label styleClass="shiftText" text="inverse">
+                        <Label styleClass="shiftText" text="arctan">
                            <font>
                               <Font size="8.0" />
                            </font>
@@ -313,11 +291,6 @@
                   </VBox>
                   <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <children>
-                        <Label styleClass="shiftText" text="log10">
-                           <font>
-                              <Font size="8.0" />
-                           </font>
-                        </Label>
                         <Button fx:id="squaredButton" focusTraversable="false" mnemonicParsing="false" onAction="#squaredButtonAction" prefHeight="40.0" prefWidth="50.0" styleClass="group2Button">
                            <graphic>
                               <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
@@ -331,11 +304,6 @@
                   </VBox>
                   <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <children>
-                        <Label styleClass="shiftText" text="ln">
-                           <font>
-                              <Font size="8.0" />
-                           </font>
-                        </Label>
                         <Button fx:id="logNButton" focusTraversable="false" mnemonicParsing="false" onAction="#logNButtonAction" prefHeight="40.0" prefWidth="50.0" styleClass="group2Button">
                            <graphic>
                               <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
@@ -358,7 +326,7 @@
                   </VBox>
                   <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                      <children>
-                        <Label styleClass="shiftText" text="arcsin">
+                        <Label styleClass="shiftText" text="csc">
                            <font>
                               <Font size="8.0" />
                            </font>
@@ -372,7 +340,7 @@
                   </VBox>
                   <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                      <children>
-                        <Label styleClass="shiftText" text="arccos">
+                        <Label styleClass="shiftText" text="sec">
                            <font>
                               <Font size="8.0" />
                            </font>
@@ -386,7 +354,7 @@
                   </VBox>
                   <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                      <children>
-                        <Label styleClass="shiftText" text="arctan">
+                        <Label styleClass="shiftText" text="cot">
                            <font>
                               <Font size="8.0" />
                            </font>
@@ -688,7 +656,7 @@
                   </VBox>
                   <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
                      <children>
-                        <Button fx:id="equalButton" focusTraversable="false" mnemonicParsing="false" prefHeight="40.0" prefWidth="70.0" styleClass="group2Button" text="EXE">
+                        <Button fx:id="equalButton" focusTraversable="false" mnemonicParsing="false" onAction="#executeButtonAction" prefHeight="40.0" prefWidth="70.0" styleClass="group2Button" text="EXE">
                            <font>
                               <Font name="System Bold" size="20.0" />
                            </font>
@@ -704,3 +672,4 @@
       </VBox>
    </children>
 </AnchorPane>
+<!--UI made by MIRANDA, modified by SOLANO>
