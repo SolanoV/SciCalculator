@@ -7,6 +7,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.event.ActionEvent;
 import scicalcsrc.scicalculator.model.Calculator;
+import scicalcsrc.scicalculator.model.characterButtons;
+import scicalcsrc.scicalculator.model.valueButtons;
 
 import java.io.IOException;
 import java.net.URL;
@@ -14,6 +16,7 @@ import java.util.ResourceBundle;
 
 public class scPanelController implements Initializable {
     private Calculator c=new Calculator();
+    private valueButtons vb=new valueButtons();
     @FXML private TextField insertTextField;
     @FXML private Label shiftLabel;
 
@@ -49,128 +52,129 @@ public class scPanelController implements Initializable {
 
     @FXML
     public void oneButtonAction(ActionEvent event) {
-        appendCharacter("1");
+        appendCharacter(vb.getoneButton());
+
     }
 
     @FXML
     public void twoButtonAction(ActionEvent event) {
-        appendCharacter("2");
+        appendCharacter(vb.gettwoButton());
     }
 
     @FXML
     public void threeButtonAction(ActionEvent event) {
-        appendCharacter("3");
+        appendCharacter(vb.getthreeButton());
     }
 
     @FXML
     public void fourButtonAction(ActionEvent event) {
-        appendCharacter("4");
+        appendCharacter(vb.getfourButton());
     }
 
     @FXML
     public void fiveButtonAction(ActionEvent event) {
-        appendCharacter("5");
+        appendCharacter(vb.getfiveButton());
     }
 
     @FXML
     public void sixButtonAction(ActionEvent event) {
-        appendCharacter("6");
+        appendCharacter(vb.getsixButton());
     }
 
     @FXML
     public void sevenButtonAction(ActionEvent event) {
-        appendCharacter("7");
+        appendCharacter(vb.getsevenButton());
     }
 
     @FXML
     public void eightButtonAction(ActionEvent event) {
-        appendCharacter("8");
+        appendCharacter(vb.geteightButton());
     }
 
     @FXML
     public void nineButtonAction(ActionEvent event) {
-        appendCharacter("9");
+        appendCharacter(vb.getnineButton());
     }
 
     @FXML
     public void zeroButtonAction(ActionEvent event) {
-        appendCharacter("0");
+        appendCharacter(vb.getzeroButton());
     }
     @FXML
     public void decimalPointButtonAction(ActionEvent event) {
-        appendCharacter(".");
+        appendCharacter(vb.getdotButton());
     }
     @FXML
     public void commaButtonAction(ActionEvent event) {
-        appendCharacter(",");
+        appendCharacter(vb.getcommaButton());
     }
     @FXML
     public void moduloButtonAction(ActionEvent event) {
-        appendCharacter("%");
+        appendCharacter(vb.getmoduloButton());
     }
     @FXML
     public void additionButtonAction(ActionEvent event) {
-        appendCharacter("+");
+        appendCharacter(vb.getadditionButton());
     }
     @FXML
     public void subtractionButtonAction(ActionEvent event) {
-        appendCharacter("-");
+        appendCharacter(vb.getsubtractionButton());
     }
     @FXML
     public void multiplicationButtonAction(ActionEvent event) {
-        appendCharacter("*");
+        appendCharacter(vb.getmultiplyButton());
     }
     @FXML
     public void divisionButtonAction(ActionEvent event) {
-        appendCharacter("/");
+        appendCharacter(vb.getdivideButton());
     }
     @FXML
     public void leftParenthesisButtonAction(ActionEvent event) {
-        appendCharacter("(");
+        appendCharacter(vb.getleftParButton());
     }
     @FXML
     public void rightParenthesisButtonAction(ActionEvent event) {
-        appendCharacter(")");
+        appendCharacter(vb.getrightParButton());
     }
     @FXML
     public void sinButtonAction(ActionEvent event) {
-        appendCharacter("sin()");
+        appendCharacter(vb.getsinButton());
     }
     @FXML
     public void cosButtonAction(ActionEvent event) {
-        appendCharacter("cos()");
+        appendCharacter(vb.getcosButton());
     }
     @FXML
     public void tanButtonAction(ActionEvent event) {
-        appendCharacter("tan()");
+        appendCharacter(vb.gettanButton());
     }
     @FXML
     public void ansButtonAction(ActionEvent event) {
-        appendCharacter("Ans");
+        appendCharacter(vb.getAnsButton());
     }
     @FXML
     public void xButtonAction(ActionEvent event) {
-        appendCharacter("x");
+        appendCharacter(vb.getxButton());
     }
     @FXML
     public void fractionButtonAction(ActionEvent event) {
-        appendCharacter("frct()");
+        appendCharacter(vb.getfrctButton());
     }
     @FXML
     public void sqrtButtonAction(ActionEvent event) {
-        appendCharacter("sqrt()");
+        appendCharacter(vb.getsqrtButton());
     }
     @FXML
     public void exponentButtonAction(ActionEvent event) {
-        appendCharacter("exp()");
+        appendCharacter(vb.getexpButton());
     }
     @FXML
     public void squaredButtonAction(ActionEvent event) {
-        appendCharacter("sqrd()");
+        appendCharacter(vb.getsqrdButton());
     }
     @FXML
     public void logNButtonAction(ActionEvent event) {
-        appendCharacter("log()");
+        appendCharacter(vb.getlogNButton());
     }
     @FXML
     public void backspaceButtonAction(ActionEvent event) {
@@ -195,22 +199,24 @@ public class scPanelController implements Initializable {
             System.out.println("Nothing to delete: Caret at start or text empty");
             return;
         }
+        try {
+            // Remove the character before the caret
+            String newText = currentText.substring(0, caretPosition - 1) + currentText.substring(caretPosition);
+            insertTextField.setText(newText);
+            // Update the caret position directly
+            int newCaretPosition = caretPosition - 1;
+            c.setCaretPosition(newCaretPosition);
+            insertTextField.positionCaret(newCaretPosition);
+            insertTextField.requestFocus();
+            insertTextField.deselect();
 
-        // Remove the character before the caret
-        String newText = currentText.substring(0, caretPosition - 1) + currentText.substring(caretPosition);
-        insertTextField.setText(newText);
+            //Debugging Line
+            System.out.println("Backspace applied, New Text: " + newText + ", Caret: " + c.getCaretPosition());
+        } catch (Exception e) {
+            elementBoundChecker();
+        }
 
-        // Update the caret position directly
-        int newCaretPosition = caretPosition - 1;
-        c.setCaretPosition(newCaretPosition);
-        insertTextField.positionCaret(newCaretPosition);
-        elementBoundChecker();
 
-        insertTextField.requestFocus();
-        insertTextField.deselect();
-
-        //Debugging Line
-        System.out.println("Backspace applied, New Text: " + newText + ", Caret: " + c.getCaretPosition());
     }
 
     @FXML
@@ -260,10 +266,12 @@ public class scPanelController implements Initializable {
     public void shiftButtonAction(ActionEvent event) {
         if(c.getShift()==false){
             c.setShift(true);
+            c.setCaretPosition(c.getCaretPosition());
             shiftLabel.setVisible(true);
             shiftLabel.setText("Shift On");
         }
         else{
+            c.setCaretPosition(c.getCaretPosition());
             c.setShift(false);
             shiftLabel.setVisible(false);
         }

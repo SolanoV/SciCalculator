@@ -53,7 +53,7 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button fx:id="downButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="66.0" styleClass="group1Button" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <Button fx:id="downButton" focusTraversable="false" mnemonicParsing="false" prefHeight="40.0" prefWidth="66.0" styleClass="group1Button" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                      <graphic>
                         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -61,7 +61,7 @@
                            </image>
                         </ImageView>
                      </graphic></Button>
-                  <Button fx:id="okButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="70.0" styleClass="group1Button" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <Button fx:id="okButton" focusTraversable="false" mnemonicParsing="false" prefHeight="40.0" prefWidth="70.0" styleClass="group1Button" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets />
                      </GridPane.margin>
@@ -72,7 +72,7 @@
                            </image>
                         </ImageView>
                      </graphic></Button>
-                  <Button fx:id="upButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="70.0" styleClass="group1Button" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <Button fx:id="upButton" focusTraversable="false" mnemonicParsing="false" prefHeight="40.0" prefWidth="70.0" styleClass="group1Button" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <graphic>
                         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -98,7 +98,7 @@
                      </graphic></Button>
                   <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <children>
-                        <Button fx:id="shiftButton" mnemonicParsing="false" onAction="#shiftButtonAction" prefHeight="38.0" prefWidth="22.0" styleClass="shiftButton">
+                        <Button fx:id="shiftButton" focusTraversable="false" mnemonicParsing="false" onAction="#shiftButtonAction" prefHeight="38.0" prefWidth="22.0" styleClass="shiftButton">
                            <graphic>
                               <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -116,7 +116,7 @@
                   </VBox>
                   <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                      <children>
-                        <Button fx:id="formatButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="43.0" styleClass="group1Button">
+                        <Button fx:id="formatButton" focusTraversable="false" mnemonicParsing="false" prefHeight="40.0" prefWidth="43.0" styleClass="group1Button">
                            <graphic>
                               <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -134,7 +134,7 @@
                   </VBox>
                   <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <children>
-                        <Button fx:id="backButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="7.0" styleClass="group1Button">
+                        <Button fx:id="backButton" focusTraversable="false" mnemonicParsing="false" prefHeight="40.0" prefWidth="7.0" styleClass="group1Button">
                            <graphic>
                               <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -152,7 +152,7 @@
                   </VBox>
                   <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                      <children>
-                        <Button fx:id="functionButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="60.0" styleClass="group1Button">
+                        <Button fx:id="functionButton" focusTraversable="false" mnemonicParsing="false" prefHeight="40.0" prefWidth="60.0" styleClass="group1Button">
                            <graphic>
                               <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -170,7 +170,7 @@
                   </VBox>
                   <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                      <children>
-                        <Button fx:id="probabilityButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="60.0" styleClass="group1Button">
+                        <Button fx:id="probabilityButton" focusTraversable="false" mnemonicParsing="false" prefHeight="40.0" prefWidth="60.0" styleClass="group1Button">
                            <graphic>
                               <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -188,7 +188,7 @@
                   </VBox>
                   <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                      <children>
-                        <Button fx:id="numericalButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="60.0" styleClass="group1Button">
+                        <Button fx:id="numericalButton" focusTraversable="false" mnemonicParsing="false" prefHeight="40.0" prefWidth="60.0" styleClass="group1Button">
                            <graphic>
                               <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -206,7 +206,7 @@
                   </VBox>
                   <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                      <children>
-                        <Button fx:id="conversionButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="60.0" styleClass="group1Button">
+                        <Button fx:id="conversionButton" focusTraversable="false" mnemonicParsing="false" prefHeight="40.0" prefWidth="60.0" styleClass="group1Button">
                            <graphic>
                               <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
