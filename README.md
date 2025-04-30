@@ -11,11 +11,11 @@ and your neat features into it. Just know that currently, 20th April 2025,
 I still am very inexperienced at programming.
 
 ### Dependencies
-Make sure JavaFX is properly set up in your IDE or build system (like Maven or Gradle) to run the app.
+- Make sure JavaFX is properly set up in your IDE or build system (like Maven or Gradle) to run the app.
 [You can download JavaFX here!](https://openjfx.io)
-
-### 🧰 Maven Setup
-Make sure you have Maven installed. If not, [download it from here](https://maven.apache.org)
+- To run the executable file, the application relies on JDK 24. If you don’t have it, you can download it from 
+[here](https://www.oracle.com/ph/java/technologies/downloads/)
+- Maven is required to be installed. [download it from here](https://maven.apache.org)
 
 ### 📸 Screenshots
 ![Screenshot of Scientific Calculator](src/main/resources/Images/screenshot.png)
