@@ -1,4 +1,4 @@
-package scicalcsrc.scicalculator;
+package scicalcsrc.scicalculator.controller;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
